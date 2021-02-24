@@ -1,11 +1,13 @@
-# Sql Formatter
+# T-SQL Formatter
 
-Format SQL files using the [sql-formatter-plus](https://github.com/kufii/sql-formatter-plus) npm package.
+Format T-SQL files using the [sql-formatter](https://github.com/zeroturnaround/sql-formatter) npm package.
 
 ## Configuration
 
-**`sql-formatter.dialect`**: Changes which dialect to format with (`sql`: Standard SQL, `n1ql`: Couchbase N1QL, `db2`: IBM DB2, `pl/sql`: Oracle PL/SQL). Defaults to `sql`.
+**`tsql-formatter.uppercase`**: Convert keywords to uppercase. Defaults to true.
 
-**`sql-formatter.uppercase`**: Convert keywords to uppercase. Defaults to false.
+**`tsql-formatter.linesBetweenQueries`**: Number of linebreaks between queries. Defaults to 2.
 
-**`sql-formatter.linesBetweenQueries`**: Number of linebreaks between queries. Defaults to 2.
+## Original
+
+Forked from [vscode-sql-formatter](https://github.com/kufii/vscode-sql-formatter).

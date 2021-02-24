@@ -1,7 +1,7 @@
 'use strict';
 
 const vscode = require('vscode');
-const sqlFormatter = require('sql-formatter-plus');
+const sqlFormatter = require('sql-formatter');
 
 const getSetting = (group, key, def) => {
 	const settings = vscode.workspace.getConfiguration(group, null);
@@ -16,9 +16,9 @@ const getSetting = (group, key, def) => {
 
 const getConfig = ({ insertSpaces, tabSize }) => ({
 	indent: insertSpaces ? ' '.repeat(tabSize) : '\t',
-	language: getSetting('sql-formatter', 'dialect', 'sql'),
-	uppercase: getSetting('sql-formatter', 'uppercase', false),
-	linesBetweenQueries: getSetting('sql-formatter', 'linesBetweenQueries', 2)
+	language: 'tsql',
+	uppercase: getSetting('tsql-formatter', 'uppercase', false),
+	linesBetweenQueries: getSetting('tsql-formatter', 'linesBetweenQueries', 2)
 });
 
 const format = (text, config) => sqlFormatter.format(text, config);
